@@ -9,7 +9,7 @@ const Navbar = () => {
       >
         <div className="container position-relative">
           <button className="navbar-toggler" type="button">
-            <i className="fa fa-bars" />
+            <i className="fa fa-bars"></i>
           </button>
           <a className="navbar-brand" href="/">
             <img src="assets/img/logo.png" alt="Game Hunt" title="Game Hunt" />
@@ -32,7 +32,7 @@ const Navbar = () => {
                     placeholder="Current Location"
                     className="form-control CurrentLocation"
                     name="location"
-                    defaultValue="Agra, Uttar Pradesh"
+                    value="Agra, Uttar Pradesh"
                   />
                 </div>
                 <img
