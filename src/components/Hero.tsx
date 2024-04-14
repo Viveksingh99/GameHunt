@@ -1,12 +1,5 @@
 import React from "react";
 import Navbar from "./Navbar";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 
 const Hero = () => {
   return (
@@ -69,43 +62,31 @@ const Hero = () => {
                 aria-label="Slide 3"
               />
             </div>
-            {/* <div className="carousel-inner"> */}
-              <Carousel>
-                <CarouselContent>
-                  <CarouselItem>
-                    {" "}
-                    <div className="carousel-item active">
-                      <img
-                        src="assets/img/UserHomeBanner.png"
-                        className="d-block w-100"
-                        alt="..."
-                      />
-                    </div>
-                  </CarouselItem>
-                  <CarouselItem>
-                    {" "}
-                    <div className="carousel-item active">
-                      <img
-                        src="assets/img/UserHomeBanner.png"
-                        className="d-block w-100"
-                        alt="..."
-                      />
-                    </div>
-                  </CarouselItem>
-                  <CarouselItem>
-                    {" "}
-                    <div className="carousel-item">
-                      <img
-                        src="assets/img/UserHomeBanner2.png"
-                        className="d-block w-100"
-                        alt="..."
-                      />
-                    </div>
-                  </CarouselItem>
-                </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
-            {/* </div> */}
+            <div className="carousel-inner">
+              <div className="carousel-item active">
+                <img
+                  src="assets/img/UserHomeBanner.png"
+                  className="d-block w-100"
+                  alt="..."
+                />
+              </div>
+
+              <div className="carousel-item active">
+                <img
+                  src="assets/img/UserHomeBanner.png"
+                  className="d-block w-100"
+                  alt="..."
+                />
+              </div>
+
+              <div className="carousel-item">
+                <img
+                  src="assets/img/UserHomeBanner2.png"
+                  className="d-block w-100"
+                  alt="..."
+                />
+              </div>
+            </div>
             <button
               className="carousel-control-prev"
               type="button"
@@ -124,8 +105,6 @@ const Hero = () => {
               <span className="carousel-control-next-icon" aria-hidden="true" />
               <span className="visually-hidden">Next</span>
             </button>
-            </Carousel>
-
           </div>
         </header>
       </div>

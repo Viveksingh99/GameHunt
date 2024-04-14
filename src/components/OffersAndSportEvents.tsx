@@ -1,6 +1,25 @@
-import React from "react";
+"use client";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const OffersAndSportEvents = () => {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://api.thegamehunt.com/api/coach/homeScreen?longitude=&latitude"
+        );
+        setData(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+  const Offers = data?.data?.offers;
   return (
     <>
       <section className="pt-4" id="Offerevents">
@@ -47,102 +66,24 @@ const OffersAndSportEvents = () => {
                 >
                   <div id="dynamicDots" className="position-relative">
                     <div className="slider EventNewsSlider sportSlider">
-                      <div>
-                        <div
-                          tabIndex={-1}
-                          style={{ width: "100%", display: "inline-block" }}
-                        >
-                          <div className="">
-                            <div className="eventGridFlex">
-                              <img
-                                src="assets/img/offerImage1.png"
-                                className="img-fluid eventTabImg"
-                                alt=""
-                              />
+                      {Offers?.map((x: any, index: any) => (
+                        <div key={index}>
+                          <div
+                            tabIndex={-1}
+                            style={{ width: "100%", display: "inline-block" }}
+                          >
+                            <div className="">
+                              <div className="eventGridFlex">
+                                <img
+                                  src={x.image}
+                                  className="img-fluid eventTabImg"
+                                  alt=""
+                                />
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div>
-                        <div
-                          tabIndex={-1}
-                          style={{ width: "100%", display: "inline-block" }}
-                        >
-                          <div className="">
-                            <div className="eventGridFlex">
-                              <img
-                                src="assets/img/offerImage2.png"
-                                className="img-fluid eventTabImg"
-                                alt=""
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div>
-                        <div
-                          tabIndex={-1}
-                          style={{ width: "100%", display: "inline-block" }}
-                        >
-                          <div className="">
-                            <div className="eventGridFlex">
-                              <img
-                                src="assets/img/offerImage3.png"
-                                className="img-fluid eventTabImg"
-                                alt=""
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div>
-                        <div
-                          tabIndex={-1}
-                          style={{ width: "100%", display: "inline-block" }}
-                        >
-                          <div className="">
-                            <div className="eventGridFlex">
-                              <img
-                                src="assets/img/offerImage1.png"
-                                className="img-fluid eventTabImg"
-                                alt=""
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div>
-                        <div
-                          tabIndex={-1}
-                          style={{ width: "100%", display: "inline-block" }}
-                        >
-                          <div className="">
-                            <div className="eventGridFlex">
-                              <img
-                                src="assets/img/offerImage2.png"
-                                className="img-fluid eventTabImg"
-                                alt=""
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div>
-                        <div
-                          tabIndex={-1}
-                          style={{ width: "100%", display: "inline-block" }}
-                        >
-                          <div className="">
-                            <div className="eventGridFlex">
-                              <img
-                                src="assets/img/offerImage3.png"
-                                className="img-fluid eventTabImg"
-                                alt=""
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      ))}
                     </div>
                   </div>
                 </div>

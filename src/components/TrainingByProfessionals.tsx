@@ -1,6 +1,26 @@
-import React from "react";
+"use client";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const TrainingByProfessionals = () => {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://api.thegamehunt.com/api/coach/homeScreen?longitude=&latitude"
+        );
+        setData(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+  const coachesData = data?.data?.coachesData;
+  console.log("first", data)
   return (
     <>
       <section className="mt-4 pt-4" id="ourprograms">
@@ -97,510 +117,80 @@ const TrainingByProfessionals = () => {
               <div className="tab-content" id="pills-tabContent">
                 <div id="dynamicDots" className="position-relative">
                   <div className="slider programIMages sportSlider">
-                    <div className="">
-                      <div className="bg-white p-2 text-capitalize programs-colles vanuesNearMeBox">
-                        <div className="position-relative">
-                          <a className="text-dark" href="#">
-                            <img
-                              src="https://gamehunt-data.s3.amazonaws.com/3fe6a755-8f7c-4be1-a75b-5dda9540292a.JPG"
-                              className="img-fluid tabImage"
-                              alt=""
-                            />
-                          </a>
-                          <div className="venueBoxIcons">
-                            <span className="votesRatingBg">
-                              0{" "}
+                    {coachesData?.map((x: any, index: any) => (
+                      <div key={index} className="">
+                        <div className="bg-white p-2 text-capitalize programs-colles vanuesNearMeBox">
+                          <div className="position-relative">
+                            <a className="text-dark" href="#">
                               <img
-                                src="assets/img/star.png"
+                                src="https://gamehunt-data.s3.amazonaws.com/3fe6a755-8f7c-4be1-a75b-5dda9540292a.JPG"
+                                className="img-fluid tabImage"
                                 alt=""
-                                className="start"
                               />
-                            </span>{" "}
-                            0 votes
-                          </div>
-                          <img
-                            src="assets/img/Favoriteunselected.png"
-                            alt=""
-                            className="d-none"
-                          />
-                        </div>
-                        <div className="text-start mt-3">
-                          <a className="text-dark" href="#">
-                            <h5
-                              className="ellips1Line text-dark w-100 fw-bold"
-                              title="Gamehunt Football Academy"
-                            >
-                              Gamehunt Football Academy
-                            </h5>
-                            <p className="text-dark ellips1Line w-100 mb-3">
-                              football
-                            </p>
-                          </a>
-                          <div className="eventCreater">
-                            <img
-                              src="https://gamehunt-data.s3.amazonaws.com/IMG-8455.jpg"
-                              className="rounded-circle eventCreaterIcon"
-                              alt=""
-                            />
-                            <span>
-                              <p className="mb-0 fw-bold ellips1Line w-100 text-dark">
-                                Prasad Bhosale
-                              </p>
-                            </span>
-                          </div>
-                          <div className="d-flex justify-content-between align-items-center gap-2 mb-2">
-                            <span className="ellips1Line w-100 text-dark">
-                              Kandivali, Kandivali West, Mumbai, Maharashtra,
-                              India
-                            </span>
-                            <a
-                              href="https://www.google.com/maps/place/Kandivali, Kandivali West, Mumbai, Maharashtra, India"
-                              target="_blank"
-                              className="clubKMS box-shadow"
-                            >
-                              <img
-                                src="assets/img/map_pins_icon.png"
-                                alt=""
-                                className="map_pins_icon"
-                              />{" "}
-                              1032.13Km
                             </a>
+                            <div className="venueBoxIcons">
+                              <span className="votesRatingBg">
+                                0{" "}
+                                <img
+                                  src="assets/img/star.png"
+                                  alt=""
+                                  className="start"
+                                />
+                              </span>{" "}
+                              0 votes
+                            </div>
+                            <img
+                              src="assets/img/Favoriteunselected.png"
+                              alt=""
+                              className="d-none"
+                            />
+                          </div>
+                          <div className="text-start mt-3">
+                            <a className="text-dark" href="#">
+                              <h5
+                                className="ellips1Line text-dark w-100 fw-bold"
+                                title="Gamehunt Football Academy"
+                              >
+                                Gamehunt Football Academy
+                              </h5>
+                              <p className="text-dark ellips1Line w-100 mb-3">
+                                football
+                              </p>
+                            </a>
+                            <div className="eventCreater">
+                              <img
+                                src="https://gamehunt-data.s3.amazonaws.com/IMG-8455.jpg"
+                                className="rounded-circle eventCreaterIcon"
+                                alt=""
+                              />
+                              <span>
+                                <p className="mb-0 fw-bold ellips1Line w-100 text-dark">
+                                  Prasad Bhosale
+                                </p>
+                              </span>
+                            </div>
+                            <div className="d-flex justify-content-between align-items-center gap-2 mb-2">
+                              <span className="ellips1Line w-100 text-dark">
+                                Kandivali, Kandivali West, Mumbai, Maharashtra,
+                                India
+                              </span>
+                              <a
+                                href="https://www.google.com/maps/place/Kandivali, Kandivali West, Mumbai, Maharashtra, India"
+                                target="_blank"
+                                className="clubKMS box-shadow"
+                              >
+                                <img
+                                  src="assets/img/map_pins_icon.png"
+                                  alt=""
+                                  className="map_pins_icon"
+                                />{" "}
+                                1032.13Km
+                              </a>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div className="">
-                      <div className="bg-white p-2 text-capitalize programs-colles vanuesNearMeBox">
-                        <div className="position-relative">
-                          <a className="text-dark" href="#">
-                            <img
-                              src="https://gamehunt-data.s3.amazonaws.com/3fe6a755-8f7c-4be1-a75b-5dda9540292a.JPG"
-                              className="img-fluid tabImage"
-                              alt=""
-                            />
-                          </a>
-                          <div className="venueBoxIcons">
-                            <span className="votesRatingBg">
-                              0{" "}
-                              <img
-                                src="assets/img/star.png"
-                                alt=""
-                                className="start"
-                              />
-                            </span>{" "}
-                            0 votes
-                          </div>
-                          <img
-                            src="assets/img/Favoriteunselected.png"
-                            alt=""
-                            className="d-none"
-                          />
-                        </div>
-                        <div className="text-start mt-3">
-                          <a className="text-dark" href="#">
-                            <h5
-                              className="ellips1Line text-dark w-100 fw-bold"
-                              title="Gamehunt Football Academy"
-                            >
-                              Gamehunt Football Academy
-                            </h5>
-                            <p className="text-dark ellips1Line w-100 mb-3">
-                              football
-                            </p>
-                          </a>
-                          <div className="eventCreater">
-                            <img
-                              src="https://gamehunt-data.s3.amazonaws.com/IMG-8455.jpg"
-                              className="rounded-circle eventCreaterIcon"
-                              alt=""
-                            />
-                            <span>
-                              <p className="mb-0 fw-bold ellips1Line w-100 text-dark">
-                                Prasad Bhosale
-                              </p>
-                            </span>
-                          </div>
-                          <div className="d-flex justify-content-between align-items-center gap-2 mb-2">
-                            <span className="ellips1Line w-100 text-dark">
-                              Kandivali, Kandivali West, Mumbai, Maharashtra,
-                              India
-                            </span>
-                            <a
-                              href="https://www.google.com/maps/place/Kandivali, Kandivali West, Mumbai, Maharashtra, India"
-                              target="_blank"
-                              className="clubKMS box-shadow"
-                            >
-                              <img
-                                src="assets/img/map_pins_icon.png"
-                                alt=""
-                                className="map_pins_icon"
-                              />{" "}
-                              1032.13Km
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="">
-                      <div className="bg-white p-2 text-capitalize programs-colles vanuesNearMeBox">
-                        <div className="position-relative">
-                          <a className="text-dark" href="#">
-                            <img
-                              src="https://gamehunt-data.s3.amazonaws.com/3fe6a755-8f7c-4be1-a75b-5dda9540292a.JPG"
-                              className="img-fluid tabImage"
-                              alt=""
-                            />
-                          </a>
-                          <div className="venueBoxIcons">
-                            <span className="votesRatingBg">
-                              0{" "}
-                              <img
-                                src="assets/img/star.png"
-                                alt=""
-                                className="start"
-                              />
-                            </span>{" "}
-                            0 votes
-                          </div>
-                          <img
-                            src="assets/img/Favoriteunselected.png"
-                            alt=""
-                            className="d-none"
-                          />
-                        </div>
-                        <div className="text-start mt-3">
-                          <a className="text-dark" href="#">
-                            <h5
-                              className="ellips1Line text-dark w-100 fw-bold"
-                              title="Gamehunt Football Academy"
-                            >
-                              Gamehunt Football Academy
-                            </h5>
-                            <p className="text-dark ellips1Line w-100 mb-3">
-                              football
-                            </p>
-                          </a>
-                          <div className="eventCreater">
-                            <img
-                              src="https://gamehunt-data.s3.amazonaws.com/IMG-8455.jpg"
-                              className="rounded-circle eventCreaterIcon"
-                              alt=""
-                            />
-                            <span>
-                              <p className="mb-0 fw-bold ellips1Line w-100 text-dark">
-                                Prasad Bhosale
-                              </p>
-                            </span>
-                          </div>
-                          <div className="d-flex justify-content-between align-items-center gap-2 mb-2">
-                            <span className="ellips1Line w-100 text-dark">
-                              Kandivali, Kandivali West, Mumbai, Maharashtra,
-                              India
-                            </span>
-                            <a
-                              href="https://www.google.com/maps/place/Kandivali, Kandivali West, Mumbai, Maharashtra, India"
-                              target="_blank"
-                              className="clubKMS box-shadow"
-                            >
-                              <img
-                                src="assets/img/map_pins_icon.png"
-                                alt=""
-                                className="map_pins_icon"
-                              />{" "}
-                              1032.13Km
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="">
-                      <div className="bg-white p-2 text-capitalize programs-colles vanuesNearMeBox">
-                        <div className="position-relative">
-                          <a className="text-dark" href="#">
-                            <img
-                              src="https://gamehunt-data.s3.amazonaws.com/3fe6a755-8f7c-4be1-a75b-5dda9540292a.JPG"
-                              className="img-fluid tabImage"
-                              alt=""
-                            />
-                          </a>
-                          <div className="venueBoxIcons">
-                            <span className="votesRatingBg">
-                              0{" "}
-                              <img
-                                src="assets/img/star.png"
-                                alt=""
-                                className="start"
-                              />
-                            </span>{" "}
-                            0 votes
-                          </div>
-                          <img
-                            src="assets/img/Favoriteunselected.png"
-                            alt=""
-                            className="d-none"
-                          />
-                        </div>
-                        <div className="text-start mt-3">
-                          <a className="text-dark" href="#">
-                            <h5
-                              className="ellips1Line text-dark w-100 fw-bold"
-                              title="Gamehunt Football Academy"
-                            >
-                              Gamehunt Football Academy
-                            </h5>
-                            <p className="text-dark ellips1Line w-100 mb-3">
-                              football
-                            </p>
-                          </a>
-                          <div className="eventCreater">
-                            <img
-                              src="https://gamehunt-data.s3.amazonaws.com/IMG-8455.jpg"
-                              className="rounded-circle eventCreaterIcon"
-                              alt=""
-                            />
-                            <span>
-                              <p className="mb-0 fw-bold ellips1Line w-100 text-dark">
-                                Prasad Bhosale
-                              </p>
-                            </span>
-                          </div>
-                          <div className="d-flex justify-content-between align-items-center gap-2 mb-2">
-                            <span className="ellips1Line w-100 text-dark">
-                              Kandivali, Kandivali West, Mumbai, Maharashtra,
-                              India
-                            </span>
-                            <a
-                              href="https://www.google.com/maps/place/Kandivali, Kandivali West, Mumbai, Maharashtra, India"
-                              target="_blank"
-                              className="clubKMS box-shadow"
-                            >
-                              <img
-                                src="assets/img/map_pins_icon.png"
-                                alt=""
-                                className="map_pins_icon"
-                              />{" "}
-                              1032.13Km
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="">
-                      <div className="bg-white p-2 text-capitalize programs-colles vanuesNearMeBox">
-                        <div className="position-relative">
-                          <a className="text-dark" href="#">
-                            <img
-                              src="https://gamehunt-data.s3.amazonaws.com/3fe6a755-8f7c-4be1-a75b-5dda9540292a.JPG"
-                              className="img-fluid tabImage"
-                              alt=""
-                            />
-                          </a>
-                          <div className="venueBoxIcons">
-                            <span className="votesRatingBg">
-                              0{" "}
-                              <img
-                                src="assets/img/star.png"
-                                alt=""
-                                className="start"
-                              />
-                            </span>{" "}
-                            0 votes
-                          </div>
-                          <img
-                            src="assets/img/Favoriteunselected.png"
-                            alt=""
-                            className="d-none"
-                          />
-                        </div>
-                        <div className="text-start mt-3">
-                          <a className="text-dark" href="#">
-                            <h5
-                              className="ellips1Line text-dark w-100 fw-bold"
-                              title="Gamehunt Football Academy"
-                            >
-                              Gamehunt Football Academy
-                            </h5>
-                            <p className="text-dark ellips1Line w-100 mb-3">
-                              football
-                            </p>
-                          </a>
-                          <div className="eventCreater">
-                            <img
-                              src="https://gamehunt-data.s3.amazonaws.com/IMG-8455.jpg"
-                              className="rounded-circle eventCreaterIcon"
-                              alt=""
-                            />
-                            <span>
-                              <p className="mb-0 fw-bold ellips1Line w-100 text-dark">
-                                Prasad Bhosale
-                              </p>
-                            </span>
-                          </div>
-                          <div className="d-flex justify-content-between align-items-center gap-2 mb-2">
-                            <span className="ellips1Line w-100 text-dark">
-                              Kandivali, Kandivali West, Mumbai, Maharashtra,
-                              India
-                            </span>
-                            <a
-                              href="https://www.google.com/maps/place/Kandivali, Kandivali West, Mumbai, Maharashtra, India"
-                              target="_blank"
-                              className="clubKMS box-shadow"
-                            >
-                              <img
-                                src="assets/img/map_pins_icon.png"
-                                alt=""
-                                className="map_pins_icon"
-                              />{" "}
-                              1032.13Km
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="">
-                      <div className="bg-white p-2 text-capitalize programs-colles vanuesNearMeBox">
-                        <div className="position-relative">
-                          <a className="text-dark" href="#">
-                            <img
-                              src="https://gamehunt-data.s3.amazonaws.com/3fe6a755-8f7c-4be1-a75b-5dda9540292a.JPG"
-                              className="img-fluid tabImage"
-                              alt=""
-                            />
-                          </a>
-                          <div className="venueBoxIcons">
-                            <span className="votesRatingBg">
-                              0{" "}
-                              <img
-                                src="assets/img/star.png"
-                                alt=""
-                                className="start"
-                              />
-                            </span>{" "}
-                            0 votes
-                          </div>
-                          <img
-                            src="assets/img/Favoriteunselected.png"
-                            alt=""
-                            className="d-none"
-                          />
-                        </div>
-                        <div className="text-start mt-3">
-                          <a className="text-dark" href="#">
-                            <h5
-                              className="ellips1Line text-dark w-100 fw-bold"
-                              title="Gamehunt Football Academy"
-                            >
-                              Gamehunt Football Academy
-                            </h5>
-                            <p className="text-dark ellips1Line w-100 mb-3">
-                              football
-                            </p>
-                          </a>
-                          <div className="eventCreater">
-                            <img
-                              src="https://gamehunt-data.s3.amazonaws.com/IMG-8455.jpg"
-                              className="rounded-circle eventCreaterIcon"
-                              alt=""
-                            />
-                            <span>
-                              <p className="mb-0 fw-bold ellips1Line w-100 text-dark">
-                                Prasad Bhosale
-                              </p>
-                            </span>
-                          </div>
-                          <div className="d-flex justify-content-between align-items-center gap-2 mb-2">
-                            <span className="ellips1Line w-100 text-dark">
-                              Kandivali, Kandivali West, Mumbai, Maharashtra,
-                              India
-                            </span>
-                            <a
-                              href="https://www.google.com/maps/place/Kandivali, Kandivali West, Mumbai, Maharashtra, India"
-                              target="_blank"
-                              className="clubKMS box-shadow"
-                            >
-                              <img
-                                src="assets/img/map_pins_icon.png"
-                                alt=""
-                                className="map_pins_icon"
-                              />{" "}
-                              1032.13Km
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="">
-                      <div className="bg-white p-2 text-capitalize programs-colles vanuesNearMeBox">
-                        <div className="position-relative">
-                          <a className="text-dark" href="#">
-                            <img
-                              src="https://gamehunt-data.s3.amazonaws.com/3fe6a755-8f7c-4be1-a75b-5dda9540292a.JPG"
-                              className="img-fluid tabImage"
-                              alt=""
-                            />
-                          </a>
-                          <div className="venueBoxIcons">
-                            <span className="votesRatingBg">
-                              0{" "}
-                              <img
-                                src="assets/img/star.png"
-                                alt=""
-                                className="start"
-                              />
-                            </span>{" "}
-                            0 votes
-                          </div>
-                          <img
-                            src="assets/img/Favoriteunselected.png"
-                            alt=""
-                            className="d-none"
-                          />
-                        </div>
-                        <div className="text-start mt-3">
-                          <a className="text-dark" href="#">
-                            <h5
-                              className="ellips1Line text-dark w-100 fw-bold"
-                              title="Gamehunt Football Academy"
-                            >
-                              Gamehunt Football Academy
-                            </h5>
-                            <p className="text-dark ellips1Line w-100 mb-3">
-                              football
-                            </p>
-                          </a>
-                          <div className="eventCreater">
-                            <img
-                              src="https://gamehunt-data.s3.amazonaws.com/IMG-8455.jpg"
-                              className="rounded-circle eventCreaterIcon"
-                              alt=""
-                            />
-                            <span>
-                              <p className="mb-0 fw-bold ellips1Line w-100 text-dark">
-                                Prasad Bhosale
-                              </p>
-                            </span>
-                          </div>
-                          <div className="d-flex justify-content-between align-items-center gap-2 mb-2">
-                            <span className="ellips1Line w-100 text-dark">
-                              Kandivali, Kandivali West, Mumbai, Maharashtra,
-                              India
-                            </span>
-                            <a
-                              href="https://www.google.com/maps/place/Kandivali, Kandivali West, Mumbai, Maharashtra, India"
-                              target="_blank"
-                              className="clubKMS box-shadow"
-                            >
-                              <img
-                                src="assets/img/map_pins_icon.png"
-                                alt=""
-                                className="map_pins_icon"
-                              />{" "}
-                              1032.13Km
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                   <a className="viewAll theme-color" href="#">
                     View All

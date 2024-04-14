@@ -21,7 +21,6 @@ const OnlineSession = () => {
     fetchData();
   }, []);
   const onlineSessionData = data?.data?.onlineSession;
-  console.log("first", onlineSessionData);
   return (
     <>
       <section className="mt-4 pt-4">
