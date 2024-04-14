@@ -1,6 +1,27 @@
+"use client";
 import React from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const OnlineSession = () => {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://api.thegamehunt.com/api/coach/homeScreen?longitude=&latitude"
+        );
+        setData(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+  const onlineSessionData = data?.data?.onlineSession;
+  console.log("first", onlineSessionData);
   return (
     <>
       <section className="mt-4 pt-4">
@@ -22,102 +43,40 @@ const OnlineSession = () => {
                       transform: "translate3d(0px, 0px, 0px)",
                     }}
                   >
-                    <div
-                      data-index={0}
-                      className="slick-slide slick-active slick-current"
-                      tabIndex={-1}
-                      aria-hidden="false"
-                      style={{ outline: "none", width: 432 }}
-                    >
-                      <div>
-                        <div
+                    {onlineSessionData?.map((x:any, index:any) => 
+                       (
+                        <div key={index}
+                          data-index={0}
+                          className="slick-slide slick-active slick-current"
                           tabIndex={-1}
-                          style={{ width: "100%", display: "inline-block" }}
+                          aria-hidden="false"
+                          style={{ outline: "none", width: 432 }}
                         >
-                          <a
-                            href="https://www.youtube.com/embed/IkNfPb3sfLQ"
-                            target="_blank"
-                            className="text-dark"
-                          >
-                            <div className="">
-                              <div className="eventGridFlex position-relative">
-                                <iframe
-                                  src="https://www.youtube.com/embed/IkNfPb3sfLQ"
-                                  title="Use this three-letter word to Stop Trash-Talking to yourself! - Coach Amreen"
-                                  frameBorder={0}
-                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                  // allowFullScreen=""
-                                />
-                              </div>
+                          <div>
+                            <div
+                              tabIndex={-1}
+                              style={{ width: "100%", display: "inline-block" }}
+                            >
+                              <a
+                                href={x.link}
+                                target="_blank"
+                                className="text-dark"
+                              >
+                                <div className="">
+                                  <div className="eventGridFlex position-relative">
+                                    <iframe
+                                      src={x.image}
+                                      title="Use this three-letter word to Stop Trash-Talking to yourself! - Coach Amreen"
+                                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    />
+                                  </div>
+                                </div>
+                              </a>
                             </div>
-                          </a>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                    <div
-                      data-index={1}
-                      className="slick-slide slick-active"
-                      tabIndex={-1}
-                      aria-hidden="false"
-                      style={{ outline: "none", width: 432 }}
-                    >
-                      <div>
-                        <div
-                          tabIndex={-1}
-                          style={{ width: "100%", display: "inline-block" }}
-                        >
-                          <a
-                            href="https://www.youtube.com/embed/qXcdq826f5Q"
-                            target="_blank"
-                            className="text-dark"
-                          >
-                            <div className="">
-                              <div className="eventGridFlex position-relative">
-                                <iframe
-                                  src="https://www.youtube.com/embed/qXcdq826f5Q"
-                                  title="Use this three-letter word to Stop Trash-Talking to yourself! - Coach Amreen"
-                                  frameBorder={0}
-                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                  // allowFullScreen=""
-                                />
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      data-index={2}
-                      className="slick-slide slick-active"
-                      tabIndex={-1}
-                      aria-hidden="false"
-                      style={{ outline: "none", width: 432 }}
-                    >
-                      <div>
-                        <div
-                          tabIndex={-1}
-                          style={{ width: "100%", display: "inline-block" }}
-                        >
-                          <a
-                            href="https://www.youtube.com/embed/jBs2RtZ1rDM"
-                            target="_blank"
-                            className="text-dark"
-                          >
-                            <div className="">
-                              <div className="eventGridFlex position-relative">
-                                <iframe
-                                  src="https://www.youtube.com/embed/jBs2RtZ1rDM"
-                                  title="Use this three-letter word to Stop Trash-Talking to yourself! - Coach Amreen"
-                                  // frameBorder={0}
-                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                  // allowFullScreen=""
-                                />
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
+                      )
+                    )}
                   </div>
                 </div>
               </div>

@@ -1,4 +1,17 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+import path from 'path';
+
+const nextConfig = {
+    webpack: (config, { isServer }) => {
+        if (!isServer) {
+          config.resolve.modules.push(path.resolve(process.cwd(), 'src'));
+        }
+    
+        return config;
+      },
+      eslint: {
+        dirs: ['src'],
+      },
+};
 
 export default nextConfig;
