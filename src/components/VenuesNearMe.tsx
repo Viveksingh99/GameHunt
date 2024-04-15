@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 const VenuesNearMe = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<{ data: { venueData: any[] } } | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,7 +19,7 @@ const VenuesNearMe = () => {
 
     fetchData();
   }, []);
-  const venueData = data?.data?.venueData;
+  const venueData = data?.data?.venueData ?? [];
   return (
     <>
       <section className="mt-4 pt-4" id="ourprograms">

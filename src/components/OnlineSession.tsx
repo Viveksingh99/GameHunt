@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const OnlineSession = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<{ data: { onlineSession: any[] } } | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,7 +20,7 @@ const OnlineSession = () => {
 
     fetchData();
   }, []);
-  const onlineSessionData = data?.data?.onlineSession;
+  const onlineSessionData = data?.data?.onlineSession ?? [];
   return (
     <>
       <section className="mt-4 pt-4">

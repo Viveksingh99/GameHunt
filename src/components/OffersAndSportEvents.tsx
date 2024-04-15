@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 const OffersAndSportEvents = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<{ data: { offers: any[] } } | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,7 +19,7 @@ const OffersAndSportEvents = () => {
 
     fetchData();
   }, []);
-  const Offers = data?.data?.offers;
+  const Offers = data?.data?.offers ?? [];
   return (
     <>
       <section className="pt-4" id="Offerevents">

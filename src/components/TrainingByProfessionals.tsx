@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 const TrainingByProfessionals = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<{ data: { coachesData: any[] } } | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,7 +19,7 @@ const TrainingByProfessionals = () => {
 
     fetchData();
   }, []);
-  const coachesData = data?.data?.coachesData;
+  const coachesData = data?.data?.coachesData ?? [];
   console.log("first", data)
   return (
     <>
