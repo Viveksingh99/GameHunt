@@ -2,6 +2,11 @@
 import axios from "axios";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 
 const TrainingByProfessionals = () => {
   const [data, setData] = useState<{ data: { coachesData: any[] } } | null>(
@@ -25,7 +30,7 @@ const TrainingByProfessionals = () => {
   const coachesData = data?.data?.coachesData ?? [];
   return (
     <>
-      <section className="mt-4 pt-4" id="ourprograms">
+      <section className="mt-4 pt-4">
         <div className="container">
           <div className="row">
             <div className="col-sm-12 col-md-12 col-lg-12 mb-3 text-center">
@@ -131,93 +136,99 @@ const TrainingByProfessionals = () => {
                   </div>
                 </div>
               </div>
-              <div className="tab-content" id="pills-tabContent">
-                <div id="dynamicDots" className="position-relative">
-                  <div className="slider programIMages sportSlider">
-                    {coachesData?.map((x: any, index: any) => (
-                      <div key={index} className="flex">
-                        <div className="bg-white p-2 text-capitalize programs-colles vanuesNearMeBox">
-                          <div className="position-relative">
-                            <a className="text-dark" href="#">
-                              <Image
-                                width={300}
-                                height={300}
-                                src="https://gamehunt-data.s3.amazonaws.com/3fe6a755-8f7c-4be1-a75b-5dda9540292a.JPG"
-                                className="img-fluid tabImage"
-                                alt=""
-                              />
-                            </a>
-                            <div className="venueBoxIcons">
-                              <span className="votesRatingBg">
-                                0{" "}
-                                <Image
-                                  width={100}
-                                  height={100}
-                                  src="/assets/img/star.png"
-                                  alt=""
-                                  className="start"
-                                />
-                              </span>{" "}
-                              0 votes
+              <div className="tab-content">
+                <div className="position-relative">
+                  <div className="programIMages">
+                    <Carousel>
+                      <CarouselContent>
+                        {coachesData?.map((x: any, index: any) => (
+                          <CarouselItem key={index} className="basis-1/3">
+                            <div key={index} className="">
+                              <div className="bg-white p-2 text-capitalize programs-colles vanuesNearMeBox">
+                                <div className="position-relative">
+                                  <a className="text-dark" href="#">
+                                    <Image
+                                      width={300}
+                                      height={300}
+                                      src="https://gamehunt-data.s3.amazonaws.com/3fe6a755-8f7c-4be1-a75b-5dda9540292a.JPG"
+                                      className="img-fluid tabImage"
+                                      alt=""
+                                    />
+                                  </a>
+                                  <div className="venueBoxIcons">
+                                    <span className="votesRatingBg">
+                                      0
+                                      <Image
+                                        width={500}
+                                        height={500}
+                                        src="/assets/img/star.png"
+                                        alt=""
+                                        className="start"
+                                      />
+                                    </span>{" "}
+                                    0 votes
+                                  </div>
+                                  <Image
+                                    width={100}
+                                    height={100}
+                                    src="/assets/img/Favoriteunselected.png"
+                                    alt=""
+                                    className="d-none"
+                                  />
+                                </div>
+                                <div className="text-start mt-3">
+                                  <a className="text-dark" href="#">
+                                    <h5
+                                      className="ellips1Line text-dark w-100 fw-bold"
+                                      title="Gamehunt Football Academy"
+                                    >
+                                      Gamehunt Football Academy
+                                    </h5>
+                                    <p className="text-dark ellips1Line w-100 mb-3">
+                                      football
+                                    </p>
+                                  </a>
+                                  <div className="eventCreater">
+                                    <Image
+                                      width={100}
+                                      height={100}
+                                      src="https://gamehunt-data.s3.amazonaws.com/IMG-8455.jpg"
+                                      className="rounded-circle eventCreaterIcon"
+                                      alt=""
+                                    />
+                                    <span>
+                                      <p className="mb-0 fw-bold ellips1Line w-100 text-dark">
+                                        Prasad Bhosale
+                                      </p>
+                                    </span>
+                                  </div>
+                                  <div className="d-flex justify-content-between align-items-center gap-2 mb-2">
+                                    <span className="ellips1Line w-100 text-dark">
+                                      Kandivali, Kandivali West, Mumbai,
+                                      Maharashtra, India
+                                    </span>
+                                    <a
+                                      href="https://www.google.com/maps/place/Kandivali, Kandivali West, Mumbai, Maharashtra, India"
+                                      target="_blank"
+                                      className="clubKMS box-shadow"
+                                    >
+                                      <Image
+                                        width={30}
+                                        height={30}
+                                        src="/assets/img/map_pins_icon.png"
+                                        alt=""
+                                        className="map_pins_icon"
+                                      />
+                                      1032.13Km
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
-                            <Image
-                              width={100}
-                              height={100}
-                              src="/assets/img/Favoriteunselected.png"
-                              alt=""
-                              className="d-none"
-                            />
-                          </div>
-                          <div className="text-start mt-3">
-                            <a className="text-dark" href="#">
-                              <h5
-                                className="ellips1Line text-dark w-100 fw-bold"
-                                title="Gamehunt Football Academy"
-                              >
-                                Gamehunt Football Academy
-                              </h5>
-                              <p className="text-dark ellips1Line w-100 mb-3">
-                                football
-                              </p>
-                            </a>
-                            <div className="eventCreater">
-                              <Image
-                                width={100}
-                                height={100}
-                                src="https://gamehunt-data.s3.amazonaws.com/IMG-8455.jpg"
-                                className="rounded-circle eventCreaterIcon"
-                                alt=""
-                              />
-                              <span>
-                                <p className="mb-0 fw-bold ellips1Line w-100 text-dark">
-                                  Prasad Bhosale
-                                </p>
-                              </span>
-                            </div>
-                            <div className="d-flex justify-content-between align-items-center gap-2 mb-2">
-                              <span className="ellips1Line w-100 text-dark">
-                                Kandivali, Kandivali West, Mumbai, Maharashtra,
-                                India
-                              </span>
-                              <a
-                                href="https://www.google.com/maps/place/Kandivali, Kandivali West, Mumbai, Maharashtra, India"
-                                target="_blank"
-                                className="clubKMS box-shadow"
-                              >
-                                <Image
-                                  width={30}
-                                  height={30}
-                                  src="/assets/img/map_pins_icon.png"
-                                  alt=""
-                                  className="map_pins_icon"
-                                />{" "}
-                                1032.13Km
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
+                          </CarouselItem>
+                        ))}
+                      </CarouselContent>
+                    </Carousel>
                   </div>
                   <a className="viewAll theme-color" href="#">
                     View All

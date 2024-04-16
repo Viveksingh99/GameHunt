@@ -46,6 +46,7 @@ export default function Home() {
         />
         <div id="root">
           <div className="Toastify" />
+
           {/* Hero section */}
           <Hero />
           {/* Hero section */}
@@ -85,7 +86,7 @@ export default function Home() {
         {/* Bootstrap core JS*/}
         {/* Core theme JS*/}
         {/* Modal */}
-        
+
         <div
           className="modal fade"
           id="LoginModal"

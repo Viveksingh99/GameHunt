@@ -2,6 +2,13 @@
 import axios from "axios";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const VenuesNearMe = () => {
   const [data, setData] = useState<{ data: { venueData: any[] } } | null>(null);
@@ -132,73 +139,79 @@ const VenuesNearMe = () => {
               <div className="tab-content">
                 <div className="position-relative">
                   <div className="slider programIMages">
-                    {venueData?.map((x: any, index: any) => (
-                      <div key={index} className="flex flex-wrap">
-                        <div className="bg-white p-2 text-capitalize programs-colles vanuesNearMeBox">
-                          <div className="position-relative">
-                            <a className="text-dark" href="#">
-                              <Image
-                                width={100}
-                                height={100}
-                                src={x.image[0].image}
-                                className="img-fluid tabImage"
-                                alt=""
-                              />
-                            </a>
-                            <div className="venueBoxIcons">
-                              <span className="votesRatingBg">
-                                0{" "}
-                                <Image
-                                  width={100}
-                                  height={100}
-                                  src="/assets/img/star.png"
-                                  alt=""
-                                  className="start"
-                                />
-                              </span>{" "}
-                              0 votes
+                    <Carousel>
+                      <CarouselContent>
+                        {venueData?.map((x: any, index: any) => (
+                          <CarouselItem key={index} className="basis-1/3">
+                            <div key={index}>
+                              <div className="bg-white p-2 text-capitalize programs-colles vanuesNearMeBox">
+                                <div className="position-relative">
+                                  <a className="text-dark" href="#">
+                                    <Image
+                                      width={500}
+                                      height={500}
+                                      src={x.image[0].image}
+                                      className="img-fluid tabImage"
+                                      alt=""
+                                    />
+                                  </a>
+                                  <div className="venueBoxIcons">
+                                    <span className="votesRatingBg">
+                                      0{" "}
+                                      <Image
+                                        width={100}
+                                        height={100}
+                                        src="/assets/img/star.png"
+                                        alt=""
+                                        className="start"
+                                      />
+                                    </span>{" "}
+                                    0 votes
+                                  </div>
+                                  <Image
+                                    width={100}
+                                    height={100}
+                                    src="/assets/img/Favoriteunselected.png"
+                                    alt=""
+                                    className="d-none"
+                                  />
+                                </div>
+                                <div className="text-start mt-3">
+                                  <a className="text-dark" href="#">
+                                    <h5
+                                      className="ellips1Line w-100 fw-bold text-dark"
+                                      title="Kaushik football Academy"
+                                    >
+                                      {x.name}
+                                    </h5>
+                                    <p className="mb-0 text-dark">football</p>
+                                  </a>
+                                  <p className="mb-0 ellips1Line w-100 text-dark">
+                                    {x.address}
+                                  </p>
+                                  <div className="d-flex justify-content-end align-items-center gap-2 mb-2">
+                                    <a
+                                      href="https://www.google.com/maps/place/Malad, Malad West, Mumbai, Maharashtra, India"
+                                      target="_blank"
+                                      className="clubKMS box-shadow"
+                                    >
+                                      <Image
+                                        width={20}
+                                        height={20}
+                                        src="/assets/img/map_pins_icon.png"
+                                        alt=""
+                                        className="map_pins_icon"
+                                      />
+                                      1033.94Km
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
-                            <Image
-                              width={100}
-                              height={100}
-                              src="/assets/img/Favoriteunselected.png"
-                              alt=""
-                              className="d-none"
-                            />
-                          </div>
-                          <div className="text-start mt-3">
-                            <a className="text-dark" href="#">
-                              <h5
-                                className="ellips1Line w-100 fw-bold text-dark"
-                                title="Kaushik football Academy"
-                              >
-                                {x.name}
-                              </h5>
-                              <p className="mb-0 text-dark">football</p>
-                            </a>
-                            <p className="mb-0 ellips1Line w-100 text-dark">
-                              {x.address}
-                            </p>
-                            <div className="d-flex justify-content-end align-items-center gap-2 mb-2">
-                              <a
-                                href="https://www.google.com/maps/place/Malad, Malad West, Mumbai, Maharashtra, India"
-                                target="_blank"
-                                className="clubKMS box-shadow"
-                              >
-                                <Image
-                                  width={20}
-                                  height={20}
-                                  src="/assets/img/map_pins_icon.png"
-                                  alt=""
-                                  className="map_pins_icon"
-                                />
-                                1033.94Km
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
+                          </CarouselItem>
+                        ))}
+                      </CarouselContent>
+                    </Carousel>
                   </div>
                   <a className="viewAll theme-color" href="/venues-listing">
                     View All
