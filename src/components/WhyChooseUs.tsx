@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const WhyChooseUs = () => {
@@ -36,8 +37,10 @@ const WhyChooseUs = () => {
                         >
                           <div className="text-center cursor-pointer whyChooseBox">
                             <div className="eventGridFlex">
-                              <img
-                                src="assets/img/whychoose_icon1.png"
+                              <Image
+                                width={70}
+                                height={70}
+                                src="/assets/img/whychoose_icon1.png"
                                 className="img-fluid ChooseUsIcon"
                                 alt=""
                               />
@@ -69,8 +72,10 @@ const WhyChooseUs = () => {
                         >
                           <div className="text-center cursor-pointer whyChooseBox">
                             <div className="eventGridFlex">
-                              <img
-                                src="assets/img/whychoose_icon2.png"
+                              <Image
+                                width={70}
+                                height={70}
+                                src="/assets/img/whychoose_icon2.png"
                                 className="img-fluid ChooseUsIcon"
                                 alt=""
                               />
@@ -102,8 +107,10 @@ const WhyChooseUs = () => {
                         >
                           <div className="text-center cursor-pointer whyChooseBox">
                             <div className="eventGridFlex">
-                              <img
-                                src="assets/img/whychoose_icon3.png"
+                              <Image
+                                width={70}
+                                height={70}
+                                src="/assets/img/whychoose_icon3.png"
                                 className="img-fluid ChooseUsIcon"
                                 alt=""
                               />
@@ -136,8 +143,10 @@ const WhyChooseUs = () => {
                         >
                           <div className="text-center cursor-pointer whyChooseBox">
                             <div className="eventGridFlex">
-                              <img
-                                src="assets/img/whychoose_icon4.png"
+                              <Image
+                                width={70}
+                                height={70}
+                                src="/assets/img/whychoose_icon4.png"
                                 className="img-fluid ChooseUsIcon"
                                 alt=""
                               />
@@ -166,8 +175,10 @@ const WhyChooseUs = () => {
                 <div className="col-6 col-sm-6 col-md-6 col-lg-3 mb-3">
                   <div className="text-center cursor-pointer whyChooseBox">
                     <div className="eventGridFlex">
-                      <img
-                        src="assets/img/whychoose_icon1.png"
+                      <Image
+                        width={50}
+                        height={50}
+                        src="/assets/img/whychoose_icon1.png"
                         className="img-fluid ChooseUsIcon"
                         alt=""
                       />
@@ -186,8 +197,10 @@ const WhyChooseUs = () => {
                 <div className="col-6 col-sm-6 col-md-6 col-lg-3 mb-3">
                   <div className="text-center cursor-pointer whyChooseBox">
                     <div className="eventGridFlex">
-                      <img
-                        src="assets/img/whychoose_icon2.png"
+                      <Image
+                        width={50}
+                        height={50}
+                        src="/assets/img/whychoose_icon2.png"
                         className="img-fluid ChooseUsIcon"
                         alt=""
                       />
@@ -206,8 +219,10 @@ const WhyChooseUs = () => {
                 <div className="col-6 col-sm-6 col-md-6 col-lg-3 mb-3">
                   <div className="text-center cursor-pointer whyChooseBox">
                     <div className="eventGridFlex">
-                      <img
-                        src="assets/img/whychoose_icon3.png"
+                      <Image
+                        width={50}
+                        height={50}
+                        src="/assets/img/whychoose_icon3.png"
                         className="img-fluid ChooseUsIcon"
                         alt=""
                       />
@@ -226,8 +241,10 @@ const WhyChooseUs = () => {
                 <div className="col-6 col-sm-6 col-md-6 col-lg-3 mb-3">
                   <div className="text-center cursor-pointer whyChooseBox">
                     <div className="eventGridFlex">
-                      <img
-                        src="assets/img/whychoose_icon4.png"
+                      <Image
+                        width={50}
+                        height={50}
+                        src="/assets/img/whychoose_icon4.png"
                         className="img-fluid ChooseUsIcon"
                         alt=""
                       />

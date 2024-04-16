@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const WhatOurCustomerAreSaying = () => {
@@ -10,13 +11,21 @@ const WhatOurCustomerAreSaying = () => {
               <h3 className="sec-title Whatour">
                 What our customer are saying
                 <p className="quetePng">
-                  <img src="assets/img/quete.png" className="mt-3" alt="" />
+                  <Image
+                    height={20}
+                    width={20}
+                    src="/assets/img/quete.png"
+                    className="mt-3"
+                    alt=""
+                  />
                 </p>
               </h3>
             </div>
             <div className="col-sm-12 col-md-9 col-lg-9 mb-0 mb-md-5 pe-0 quetePngMobileFlex">
-              <img
-                src="assets/img/quete.png"
+              <Image
+                height={20}
+                width={20}
+                src="/assets/img/quete.png"
                 className="img-fluid quetePngMobile"
                 alt=""
               />
@@ -48,8 +57,10 @@ const WhatOurCustomerAreSaying = () => {
                           >
                             <div className="customerSaingBox">
                               <div className="eventGridFlex">
-                                <img
-                                  src="assets/img/employe.png"
+                                <Image
+                                  height={20}
+                                  width={20}
+                                  src="/assets/img/employe.png"
                                   className="img-fluid coachImgCenetr"
                                   alt=""
                                 />
@@ -58,9 +69,10 @@ const WhatOurCustomerAreSaying = () => {
                                 Arpit Narvekar
                               </h5>
                               <p className="mb-0 mb-md-2">
-                                <img
-                                  src="assets/img/quete_red.png"
-                                  width="20px"
+                                <Image
+                                  height={20}
+                                  width={20}
+                                  src="/assets/img/quete_red.png"
                                   alt=""
                                 />
                               </p>
@@ -91,8 +103,10 @@ const WhatOurCustomerAreSaying = () => {
                           >
                             <div className="customerSaingBox">
                               <div className="eventGridFlex">
-                                <img
-                                  src="assets/img/employe.png"
+                                <Image
+                                  height={20}
+                                  width={20}
+                                  src="/assets/img/employe.png"
                                   className="img-fluid coachImgCenetr"
                                   alt=""
                                 />
@@ -101,9 +115,10 @@ const WhatOurCustomerAreSaying = () => {
                                 Sandeep Patil
                               </h5>
                               <p className="mb-0 mb-md-2">
-                                <img
-                                  src="assets/img/quete_red.png"
-                                  width="20px"
+                                <Image
+                                  height={20}
+                                  width={20}
+                                  src="/assets/img/quete_red.png"
                                   alt=""
                                 />
                               </p>
@@ -133,8 +148,10 @@ const WhatOurCustomerAreSaying = () => {
                           >
                             <div className="customerSaingBox">
                               <div className="eventGridFlex">
-                                <img
-                                  src="assets/img/employe.png"
+                                <Image
+                                  height={20}
+                                  width={20}
+                                  src="/assets/img/employe.png"
                                   className="img-fluid coachImgCenetr"
                                   alt=""
                                 />
@@ -143,9 +160,10 @@ const WhatOurCustomerAreSaying = () => {
                                 Tamrika Tyagi
                               </h5>
                               <p className="mb-0 mb-md-2">
-                                <img
-                                  src="assets/img/quete_red.png"
-                                  width="20px"
+                                <Image
+                                  height={20}
+                                  width={20}
+                                  src="/assets/img/quete_red.png"
                                   alt=""
                                 />
                               </p>

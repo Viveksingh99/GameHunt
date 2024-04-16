@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const Footer = () => {
@@ -39,13 +40,17 @@ const Footer = () => {
               <div className="widget getAppFla">
                 <h3>Get Mobile App</h3>
                 <p>
-                  <img
-                    src="assets/img/Googleplay.png"
+                  <Image
+                    width={70}
+                    height={70}
+                    src="/assets/img/Googleplay.png"
                     alt=""
                     className="mt-2 me-2 appIconImg"
                   />
-                  <img
-                    src="assets/img/Appstore.png"
+                  <Image
+                    width={70}
+                    height={70}
+                    src="/assets/img/Appstore.png"
                     alt=""
                     className="mt-2 appIconImg"
                   />
@@ -69,8 +74,10 @@ const Footer = () => {
                         href="https://www.facebook.com/gamehuntofficial"
                         target="_blank"
                       >
-                        <img
-                          src="assets/img/facebook.png"
+                        <Image
+                          width={20}
+                          height={20}
+                          src="/assets/img/facebook.png"
                           className="img-fluid"
                           alt=""
                         />
@@ -81,8 +88,10 @@ const Footer = () => {
                         href="https://twitter.com/gamehunt_india"
                         target="_blank"
                       >
-                        <img
-                          src="assets/img/Twitter.png"
+                        <Image
+                          width={20}
+                          height={20}
+                          src="/assets/img/Twitter.png"
                           className="img-fluid"
                           alt=""
                         />
@@ -93,8 +102,10 @@ const Footer = () => {
                         href="https://www.linkedin.com/company/gamehuntofficial"
                         target="_blank"
                       >
-                        <img
-                          src="assets/img/linkedin.png"
+                        <Image
+                          width={20}
+                          height={20}
+                          src="/assets/img/linkedin.png"
                           className="img-fluid"
                           alt=""
                         />
@@ -105,8 +116,10 @@ const Footer = () => {
                         href="https://www.instagram.com/gamehuntofficial/"
                         target="_blank"
                       >
-                        <img
-                          src="assets/img/Instagram.png"
+                        <Image
+                          width={20}
+                          height={20}
+                          src="/assets/img/Instagram.png"
                           className="img-fluid"
                           alt=""
                         />

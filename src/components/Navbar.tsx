@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const Navbar = () => {
@@ -12,7 +13,13 @@ const Navbar = () => {
             <i className="fa fa-bars"></i>
           </button>
           <a className="navbar-brand" href="/">
-            <img src="assets/img/logo.png" alt="Game Hunt" title="Game Hunt" />
+            <Image
+              width={70}
+              height={70}
+              src="/assets/img/logo.png"
+              alt="Game Hunt"
+              title="Game Hunt"
+            />
           </a>
           <div className="nav-item get-in-touch loginBtnMobileBlock">
             <span
@@ -20,8 +27,19 @@ const Navbar = () => {
               data-bs-toggle="modal"
               data-bs-target="#LoginModal"
             >
-              <img src="assets/img/userLogin.png" alt="" />{" "}
-              <img src="assets/img/userLogin.png" alt="" /> Login | Signup
+              <Image
+                width={10}
+                height={10}
+                src="/assets/img/userLogin.png"
+                alt=""
+              />{" "}
+              <Image
+                width={10}
+                height={10}
+                src="/assets/img/userLogin.png"
+                alt=""
+              />{" "}
+              Login | Signup
             </span>
           </div>
           <div className="collapse navbar-collapse homePAgeMenu">
@@ -35,13 +53,17 @@ const Navbar = () => {
                     value="Agra, Uttar Pradesh"
                   />
                 </div>
-                <img
-                  src="assets/img/address.png"
+                <Image
+                  width={10}
+                  height={10}
+                  src="/assets/img/address.png"
                   className="input-img loactun"
                   alt=""
                 />
-                <img
-                  src="assets/img/my_location_regular_icon.png"
+                <Image
+                  width={10}
+                  height={10}
+                  src="/assets/img/my_location_regular_icon.png"
                   className="input-img loactunRight"
                   alt=""
                 />
@@ -66,8 +88,19 @@ const Navbar = () => {
                   data-bs-toggle="modal"
                   data-bs-target="#LoginModal"
                 >
-                  <img src="assets/img/userLogin.png" alt="" />{" "}
-                  <img src="assets/img/userLogin.png" alt="" /> Login | Signup
+                  <Image
+                    width={10}
+                    height={10}
+                    src="/assets/img/userLogin.png"
+                    alt=""
+                  />
+                  <Image
+                    width={10}
+                    height={10}
+                    src="/assets/img/userLogin.png"
+                    alt=""
+                  />{" "}
+                  Login | Signup
                 </span>
               </li>
             </ul>

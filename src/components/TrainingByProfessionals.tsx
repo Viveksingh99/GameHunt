@@ -1,9 +1,12 @@
 "use client";
 import axios from "axios";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 const TrainingByProfessionals = () => {
-  const [data, setData] = useState<{ data: { coachesData: any[] } } | null>(null);
+  const [data, setData] = useState<{ data: { coachesData: any[] } } | null>(
+    null
+  );
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,7 +23,6 @@ const TrainingByProfessionals = () => {
     fetchData();
   }, []);
   const coachesData = data?.data?.coachesData ?? [];
-  console.log("first", data)
   return (
     <>
       <section className="mt-4 pt-4" id="ourprograms">
@@ -40,8 +42,10 @@ const TrainingByProfessionals = () => {
                     className="nav-link text-capitalize d-grid"
                     type="button"
                   >
-                    <img
-                      src="assets/img/cricket_ball_icon.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="/assets/img/cricket_ball_icon.png"
                       alt=""
                       className="sportTabImg"
                     />
@@ -53,8 +57,10 @@ const TrainingByProfessionals = () => {
                     className="nav-link text-capitalize d-grid"
                     type="button"
                   >
-                    <img
-                      src="assets/img/Footall.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="/assets/img/Footall.png"
                       alt=""
                       className="sportTabImg"
                     />
@@ -66,8 +72,10 @@ const TrainingByProfessionals = () => {
                     className="nav-link text-capitalize d-grid"
                     type="button"
                   >
-                    <img
-                      src="assets/img/Basketball.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="/assets/img/Basketball.png"
                       alt=""
                       className="sportTabImg"
                     />
@@ -79,8 +87,10 @@ const TrainingByProfessionals = () => {
                     className="nav-link text-capitalize d-grid"
                     type="button"
                   >
-                    <img
-                      src="assets/img/table_tennis.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="/assets/img/table_tennis.png"
                       alt=""
                       className="sportTabImg"
                     />
@@ -92,8 +102,10 @@ const TrainingByProfessionals = () => {
                     className="nav-link text-capitalize d-grid"
                     type="button"
                   >
-                    <img
-                      src="assets/img/badminton.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="/assets/img/badminton.png"
                       alt=""
                       className="sportTabImg"
                     />
@@ -103,7 +115,12 @@ const TrainingByProfessionals = () => {
               </ul>
               <div className="d-none">
                 <div className="position-relative filterDrop">
-                  <img src="assets/img/filter.png" alt="" />
+                  <Image
+                    width={100}
+                    height={100}
+                    src="/assets/img/filter.png"
+                    alt=""
+                  />
                   <span className="filterText">Filter</span>
                   <div className="filterDropSelct">
                     <span className="me-2 fw-bold">Filter By:</span>
@@ -118,11 +135,13 @@ const TrainingByProfessionals = () => {
                 <div id="dynamicDots" className="position-relative">
                   <div className="slider programIMages sportSlider">
                     {coachesData?.map((x: any, index: any) => (
-                      <div key={index} className="">
+                      <div key={index} className="flex">
                         <div className="bg-white p-2 text-capitalize programs-colles vanuesNearMeBox">
                           <div className="position-relative">
                             <a className="text-dark" href="#">
-                              <img
+                              <Image
+                                width={300}
+                                height={300}
                                 src="https://gamehunt-data.s3.amazonaws.com/3fe6a755-8f7c-4be1-a75b-5dda9540292a.JPG"
                                 className="img-fluid tabImage"
                                 alt=""
@@ -131,16 +150,20 @@ const TrainingByProfessionals = () => {
                             <div className="venueBoxIcons">
                               <span className="votesRatingBg">
                                 0{" "}
-                                <img
-                                  src="assets/img/star.png"
+                                <Image
+                                  width={100}
+                                  height={100}
+                                  src="/assets/img/star.png"
                                   alt=""
                                   className="start"
                                 />
                               </span>{" "}
                               0 votes
                             </div>
-                            <img
-                              src="assets/img/Favoriteunselected.png"
+                            <Image
+                              width={100}
+                              height={100}
+                              src="/assets/img/Favoriteunselected.png"
                               alt=""
                               className="d-none"
                             />
@@ -158,7 +181,9 @@ const TrainingByProfessionals = () => {
                               </p>
                             </a>
                             <div className="eventCreater">
-                              <img
+                              <Image
+                                width={100}
+                                height={100}
                                 src="https://gamehunt-data.s3.amazonaws.com/IMG-8455.jpg"
                                 className="rounded-circle eventCreaterIcon"
                                 alt=""
@@ -179,8 +204,10 @@ const TrainingByProfessionals = () => {
                                 target="_blank"
                                 className="clubKMS box-shadow"
                               >
-                                <img
-                                  src="assets/img/map_pins_icon.png"
+                                <Image
+                                  width={30}
+                                  height={30}
+                                  src="/assets/img/map_pins_icon.png"
                                   alt=""
                                   className="map_pins_icon"
                                 />{" "}

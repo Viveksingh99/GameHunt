@@ -1,5 +1,6 @@
 "use client";
 import axios from "axios";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 const VenuesNearMe = () => {
@@ -39,8 +40,10 @@ const VenuesNearMe = () => {
                     className="nav-link text-capitalize d-grid"
                     type="button"
                   >
-                    <img
-                      src="assets/img/cricket_ball_icon.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="/assets/img/cricket_ball_icon.png"
                       alt=""
                       className="sportTabImg"
                     />
@@ -52,8 +55,10 @@ const VenuesNearMe = () => {
                     className="nav-link text-capitalize d-grid"
                     type="button"
                   >
-                    <img
-                      src="assets/img/Footall.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="/assets/img/Footall.png"
                       alt=""
                       className="sportTabImg"
                     />
@@ -65,8 +70,10 @@ const VenuesNearMe = () => {
                     className="nav-link text-capitalize d-grid"
                     type="button"
                   >
-                    <img
-                      src="assets/img/Basketball.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="/assets/img/Basketball.png"
                       alt=""
                       className="sportTabImg"
                     />
@@ -78,8 +85,10 @@ const VenuesNearMe = () => {
                     className="nav-link text-capitalize d-grid"
                     type="button"
                   >
-                    <img
-                      src="assets/img/table_tennis.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="/assets/img/table_tennis.png"
                       alt=""
                       className="sportTabImg"
                     />
@@ -91,8 +100,10 @@ const VenuesNearMe = () => {
                     className="nav-link text-capitalize d-grid"
                     type="button"
                   >
-                    <img
-                      src="assets/img/badminton.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="/assets/img/badminton.png"
                       alt=""
                       className="sportTabImg"
                     />
@@ -102,7 +113,12 @@ const VenuesNearMe = () => {
               </ul>
               <div className="d-none">
                 <div className="position-relative filterDrop">
-                  <img src="assets/img/filter.png" alt="" />
+                  <Image
+                    width={100}
+                    height={100}
+                    src="/assets/img/filter.png"
+                    alt=""
+                  />
                   <span className="filterText">Filter</span>
                   <div className="filterDropSelct">
                     <span className="me-2 fw-bold">Filter By:</span>
@@ -113,15 +129,17 @@ const VenuesNearMe = () => {
                   </div>
                 </div>
               </div>
-              <div className="tab-content" id="pills-tabContent">
-                <div id="dynamicDots" className="position-relative">
-                  <div className="slider programIMages sportSlider">
+              <div className="tab-content">
+                <div className="position-relative">
+                  <div className="slider programIMages">
                     {venueData?.map((x: any, index: any) => (
-                      <div key={index}>
+                      <div key={index} className="flex flex-wrap">
                         <div className="bg-white p-2 text-capitalize programs-colles vanuesNearMeBox">
                           <div className="position-relative">
                             <a className="text-dark" href="#">
-                              <img
+                              <Image
+                                width={100}
+                                height={100}
                                 src={x.image[0].image}
                                 className="img-fluid tabImage"
                                 alt=""
@@ -130,16 +148,20 @@ const VenuesNearMe = () => {
                             <div className="venueBoxIcons">
                               <span className="votesRatingBg">
                                 0{" "}
-                                <img
-                                  src="assets/img/star.png"
+                                <Image
+                                  width={100}
+                                  height={100}
+                                  src="/assets/img/star.png"
                                   alt=""
                                   className="start"
                                 />
                               </span>{" "}
                               0 votes
                             </div>
-                            <img
-                              src="assets/img/Favoriteunselected.png"
+                            <Image
+                              width={100}
+                              height={100}
+                              src="/assets/img/Favoriteunselected.png"
                               alt=""
                               className="d-none"
                             />
@@ -163,8 +185,10 @@ const VenuesNearMe = () => {
                                 target="_blank"
                                 className="clubKMS box-shadow"
                               >
-                                <img
-                                  src="assets/img/map_pins_icon.png"
+                                <Image
+                                  width={20}
+                                  height={20}
+                                  src="/assets/img/map_pins_icon.png"
                                   alt=""
                                   className="map_pins_icon"
                                 />

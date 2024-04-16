@@ -1,5 +1,6 @@
 "use client";
 import axios from "axios";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 const OffersAndSportEvents = () => {
@@ -65,7 +66,7 @@ const OffersAndSportEvents = () => {
                   aria-labelledby="pills-offer-tab"
                 >
                   <div id="dynamicDots" className="position-relative">
-                    <div className="slider EventNewsSlider sportSlider">
+                    <div className="slider EventNewsSlider sportSlider flex gap-2">
                       {Offers?.map((x: any, index: any) => (
                         <div key={index}>
                           <div
@@ -74,7 +75,9 @@ const OffersAndSportEvents = () => {
                           >
                             <div className="">
                               <div className="eventGridFlex">
-                                <img
+                                <Image
+                                  width={1000}
+                                  height={1000}
                                   src={x.image}
                                   className="img-fluid eventTabImg"
                                   alt=""
@@ -98,8 +101,10 @@ const OffersAndSportEvents = () => {
                       <div className="">
                         <div className="AlreadyEvent">
                           <div className="AlreadyEventBox">
-                            <img
-                              src="assets/img/dummyImage.png"
+                            <Image
+                              width={100}
+                              height={100}
+                              src="/assets/img/dummyImage.png"
                               alt=""
                               className="eventImg"
                             />
@@ -110,7 +115,12 @@ const OffersAndSportEvents = () => {
                               <p className="mb-0 nameAddressEllip">Kandivali</p>
                             </a>
                             <span className="position-relative Sidetag">
-                              <img src="assets/img/Sidetag.png" alt="" />
+                              <Image
+                                width={100}
+                                height={100}
+                                src="/assets/img/Sidetag.png"
+                                alt="image"
+                              />
                               <span className="SidetagText">
                                 Booked User: 11/20
                               </span>
@@ -119,8 +129,10 @@ const OffersAndSportEvents = () => {
                           <div className="eventCreateDetail">
                             <div className="row px-1 align-items-center">
                               <div className="col-sm-12 col-md-6 col-lg-4 eventCreater vercalLIne">
-                                <img
-                                  src="assets/img/employe.png"
+                                <Image
+                                  height={100}
+                                  width={100}
+                                  src="/assets/img/employe.png"
                                   className="rounded-circle eventCreaterIcon"
                                   alt=""
                                 />
@@ -160,8 +172,10 @@ const OffersAndSportEvents = () => {
                       <div className="">
                         <div className="AlreadyEvent">
                           <div className="AlreadyEventBox">
-                            <img
-                              src="assets/img/dummyImage.png"
+                            <Image
+                              width={100}
+                              height={100}
+                              src="/assets/img/dummyImage.png"
                               alt=""
                               className="eventImg"
                             />
@@ -172,7 +186,12 @@ const OffersAndSportEvents = () => {
                               <p className="mb-0 nameAddressEllip">Kandivali</p>
                             </a>
                             <span className="position-relative Sidetag">
-                              <img src="assets/img/Sidetag.png" alt="" />
+                              <Image
+                                width={100}
+                                height={100}
+                                src="/assets/img/Sidetag.png"
+                                alt=""
+                              />
                               <span className="SidetagText">
                                 Booked User: 11/20
                               </span>
@@ -181,8 +200,10 @@ const OffersAndSportEvents = () => {
                           <div className="eventCreateDetail">
                             <div className="row px-1 align-items-center">
                               <div className="col-sm-12 col-md-6 col-lg-4 eventCreater vercalLIne">
-                                <img
-                                  src="assets/img/employe.png"
+                                <Image
+                                  width={100}
+                                  height={100}
+                                  src="/assets/img/employe.png"
                                   className="rounded-circle eventCreaterIcon"
                                   alt=""
                                 />
@@ -222,8 +243,10 @@ const OffersAndSportEvents = () => {
                       <div className="">
                         <div className="AlreadyEvent">
                           <div className="AlreadyEventBox">
-                            <img
-                              src="assets/img/dummyImage.png"
+                            <Image
+                              width={100}
+                              height={100}
+                              src="/assets/img/dummyImage.png"
                               alt=""
                               className="eventImg"
                             />
@@ -234,7 +257,12 @@ const OffersAndSportEvents = () => {
                               <p className="mb-0 nameAddressEllip">Kandivali</p>
                             </a>
                             <span className="position-relative Sidetag">
-                              <img src="assets/img/Sidetag.png" alt="" />
+                              <Image
+                                width={100}
+                                height={100}
+                                src="/assets/img/Sidetag.png"
+                                alt=""
+                              />
                               <span className="SidetagText">
                                 Booked User: 11/20
                               </span>
@@ -243,8 +271,10 @@ const OffersAndSportEvents = () => {
                           <div className="eventCreateDetail">
                             <div className="row px-1 align-items-center">
                               <div className="col-sm-12 col-md-6 col-lg-4 eventCreater vercalLIne">
-                                <img
-                                  src="assets/img/employe.png"
+                                <Image
+                                  width={100}
+                                  height={100}
+                                  src="/assets/img/employe.png"
                                   className="rounded-circle eventCreaterIcon"
                                   alt=""
                                 />
@@ -284,8 +314,10 @@ const OffersAndSportEvents = () => {
                       <div className="">
                         <div className="AlreadyEvent">
                           <div className="AlreadyEventBox">
-                            <img
-                              src="assets/img/dummyImage.png"
+                            <Image
+                              width={100}
+                              height={100}
+                              src="/assets/img/dummyImage.png"
                               alt=""
                               className="eventImg"
                             />
@@ -296,7 +328,12 @@ const OffersAndSportEvents = () => {
                               <p className="mb-0 nameAddressEllip">Kandivali</p>
                             </a>
                             <span className="position-relative Sidetag">
-                              <img src="assets/img/Sidetag.png" alt="" />
+                              <Image
+                                width={100}
+                                height={100}
+                                src="/assets/img/Sidetag.png"
+                                alt=""
+                              />
                               <span className="SidetagText">
                                 Booked User: 11/20
                               </span>
@@ -305,8 +342,10 @@ const OffersAndSportEvents = () => {
                           <div className="eventCreateDetail">
                             <div className="row px-1 align-items-center">
                               <div className="col-sm-12 col-md-6 col-lg-4 eventCreater vercalLIne">
-                                <img
-                                  src="assets/img/employe.png"
+                                <Image
+                                  width={100}
+                                  height={100}
+                                  src="/assets/img/employe.png"
                                   className="rounded-circle eventCreaterIcon"
                                   alt=""
                                 />

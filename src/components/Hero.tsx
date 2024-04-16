@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
+import Image from "next/image";
 
 const Hero = () => {
   return (
@@ -19,13 +20,13 @@ const Hero = () => {
                 autoComplete="off"
               />
             </div>
-            <img
-              src="assets/img/address.png"
+            <Image width={1000} height={1000}
+              src="/assets/img/address.png"
               className="input-img loactun"
               alt=""
             />
-            <img
-              src="assets/img/my_location_regular_icon.png"
+            <Image width={1000} height={1000}
+              src="/assets/img/my_location_regular_icon.png"
               className="input-img loactunRight"
               alt=""
             />
@@ -64,24 +65,24 @@ const Hero = () => {
             </div>
             <div className="carousel-inner">
               <div className="carousel-item active">
-                <img
-                  src="assets/img/UserHomeBanner.png"
+                <Image width={1000} height={1000}
+                  src="/assets/img/UserHomeBanner.png"
                   className="d-block w-100"
                   alt="..."
                 />
               </div>
 
               <div className="carousel-item active">
-                <img
-                  src="assets/img/UserHomeBanner.png"
+                <Image width={1000} height={1000}
+                  src="/assets/img/UserHomeBanner.png"
                   className="d-block w-100"
                   alt="..."
                 />
               </div>
 
               <div className="carousel-item">
-                <img
-                  src="assets/img/UserHomeBanner2.png"
+                <Image width={1000} height={1000}
+                  src="/assets/img/UserHomeBanner2.png"
                   className="d-block w-100"
                   alt="..."
                 />

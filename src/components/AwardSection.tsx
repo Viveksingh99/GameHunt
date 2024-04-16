@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const AwardSection = () => {
@@ -8,7 +9,13 @@ const AwardSection = () => {
           <div className="">
             <div className="counterGrid text-center align-items-center">
               <div className="d-flex gap-3 align-items-center">
-                <img src="assets/img/Countusers.png" alt="" className="" />
+                <Image
+                  width={80}
+                  height={80}
+                  src="/assets/img/Countusers.png"
+                  alt=""
+                  className=""
+                />
                 <div className="gapFlex">
                   <h2 className="mb-0 fw-bold">
                     <span>2500</span>
@@ -19,7 +26,13 @@ const AwardSection = () => {
                 </div>
               </div>
               <div className="d-flex gap-3 align-items-center">
-                <img src="assets/img/Countvenues.png" alt="" className="" />
+                <Image
+                  width={80}
+                  height={80}
+                  src="/assets/img/Countvenues.png"
+                  alt=""
+                  className=""
+                />
                 <div className="gapFlex">
                   <h2 className="mb-0 fw-bold">
                     <span>489</span>
@@ -30,7 +43,13 @@ const AwardSection = () => {
                 </div>
               </div>
               <div className="d-flex gap-3 align-items-center">
-                <img src="assets/img/Countcoaches.png" alt="" className="" />
+                <Image
+                  width={80}
+                  height={80}
+                  src="/assets/img/Countcoaches.png"
+                  alt=""
+                  className=""
+                />
                 <div className="gapFlex">
                   <h2 className="mb-0 fw-bold">
                     <span>412</span>
